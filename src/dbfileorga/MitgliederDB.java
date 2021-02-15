@@ -172,7 +172,7 @@ public class MitgliederDB implements Iterable<Record> {
     public void delete(int numRecord) {
         ArrayList<Record> records = new ArrayList<>();
         int blockNum = getBlockNumOfRecord(numRecord);
-        int firBlockNum = getNumberOfFirstRecordFormBlock(getBlockNumOfRecord(numRecord));
+        int firBlockNum = getNumberOfFirstRecordFormBlock(blockNum);
         for (int i = firBlockNum; i <= getNumberOfRecords(); i++) {
             if (i != numRecord) {
                 records.add(read(i));
